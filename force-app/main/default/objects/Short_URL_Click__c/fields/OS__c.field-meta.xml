@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OS__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( contains( lower( User_Agent__c ), &quot;windows nt 7&quot; ), &quot;Windows 7&quot;,
+	if( contains( lower( User_Agent__c ), &quot;windows nt 6&quot; ), &quot;Windows Vista&quot;,
+					if( contains( lower( User_Agent__c ), &quot;windows nt 5.2&quot;	), &quot;Windows 2003&quot;,
+					if( contains( lower( User_Agent__c ),&quot;windows nt 5.0&quot;	), &quot;Windows 2000&quot;,
+					if( contains( lower( User_Agent__c ),&quot;windows nt 5.1&quot;	), &quot;Windows XP&quot;,
+					if( contains( lower( User_Agent__c ),&quot;windows nt 4.0&quot;	), &quot;Windows NT 4.0&quot;,
+					if( contains( lower( User_Agent__c ),&quot;winnt4.0&quot;			), &quot;Windows NT 4.0&quot;,
+					if( contains( lower( User_Agent__c ),&quot;winnt 4.0&quot;			), &quot;Windows NT&quot;,
+					if( contains( lower( User_Agent__c ),&quot;winnt&quot;				), &quot;Windows NT&quot;,
+					if( contains( lower( User_Agent__c ),&quot;windows 98&quot;		), &quot;Windows 98&quot;,
+					if( contains( lower( User_Agent__c ),&quot;win98&quot;				), &quot;Windows 98&quot;,
+					if( contains( lower( User_Agent__c ),&quot;windows 95&quot;		), &quot;Windows 95&quot;,
+					if( contains( lower( User_Agent__c ),&quot;win95&quot;				), &quot;Windows 95&quot;,
+					if( contains( lower( User_Agent__c ),&quot;windows&quot;			), &quot;Unknown Windows OS&quot;,
+if( contains( lower( User_Agent__c ),&quot;iphone&quot;				), &quot;iPhone&quot;,
+if( contains( lower( User_Agent__c ),&quot;ipad&quot;				), &quot;iPad&quot;,
+					if( contains( lower( User_Agent__c ),&quot;os x 10.6&quot;				), &quot;Mac OS X 10.6&quot;,
+					if( contains( lower( User_Agent__c ),&quot;os x 10.5&quot;				), &quot;Mac OS X 10.5&quot;,
+					if( contains( lower( User_Agent__c ),&quot;os x 10.4&quot;				), &quot;Mac OS X 10.4&quot;,
+					if( contains( lower( User_Agent__c ),&quot;os x 10.3&quot;				), &quot;Mac OS X 10.3&quot;,
+					if( contains( lower( User_Agent__c ),&quot;os x&quot;				), &quot;Mac OS X&quot;,
+					if( contains( lower( User_Agent__c ),&quot;ppc mac&quot;			), &quot;Power PC Mac&quot;,
+					if( contains( lower( User_Agent__c ),&quot;freebsd&quot;			), &quot;FreeBSD&quot;,
+					if( contains( lower( User_Agent__c ),&quot;ppc&quot;				), &quot;Macintosh&quot;,
+					if( contains( lower( User_Agent__c ),&quot;linux&quot;				), &quot;Linux&quot;,
+					if( contains( lower( User_Agent__c ),&quot;debian&quot;			), &quot;Debian&quot;,
+					if( contains( lower( User_Agent__c ),&quot;sunos&quot;				), &quot;Sun Solaris&quot;,
+					if( contains( lower( User_Agent__c ),&quot;beos&quot;				), &quot;BeOS&quot;,
+					if( contains( lower( User_Agent__c ),&quot;apachebench&quot;		), &quot;ApacheBench&quot;,
+					if( contains( lower( User_Agent__c ),&quot;aix&quot;				), &quot;AIX&quot;,
+					if( contains( lower( User_Agent__c ),&quot;irix&quot;				), &quot;Irix&quot;,
+					if( contains( lower( User_Agent__c ),&quot;netbsd&quot;			), &quot;NetBSD&quot;,
+					if( contains( lower( User_Agent__c ),&quot;bsdi&quot;				), &quot;BSDi&quot;,
+					if( contains( lower( User_Agent__c ),&quot;openbsd&quot;			), &quot;OpenBSD&quot;,
+					if( contains( lower( User_Agent__c ),&quot;gnu&quot;				), &quot;GNU/Linux&quot;,
+					if( contains( lower( User_Agent__c ),&quot;unix&quot;				), &quot;Unknown Unix OS&quot;, &quot;Unknown OS&quot; ))))))))))))))))))))))))))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>OS</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

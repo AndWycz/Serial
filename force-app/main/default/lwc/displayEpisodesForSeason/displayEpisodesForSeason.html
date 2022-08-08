@@ -1,0 +1,15 @@
+<template>
+    <ul>
+        <template for:each={episodes} for:item="episode">
+            <li key={episode.Id}>  
+                <div class="slds-p-left_xx-large">
+                    <lightning-card title={episode.Name}>
+                        <template if:true={episode.Episode_details__c}>
+                            <div class="slds-p-around_x-small">{episode.Episode_details__c}</div>
+                        </template>
+                    </lightning-card>
+                </div>           
+            </li>
+        </template>
+    </ul>
+</template>

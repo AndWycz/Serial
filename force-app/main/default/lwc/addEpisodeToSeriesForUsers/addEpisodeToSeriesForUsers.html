@@ -1,0 +1,26 @@
+<template>
+    <div class ="slds-box slds-theme_default">
+        <template if:true={seasons}>
+            <ul class="slds-var-m-around_medium">
+                <template if:true={seasons}>
+                    <lightning-button-group class="slds-button-group-row">
+                        <template for:each={seasons} for:item="season" for:index="index">
+                            <li key={season.Id}>
+                                <lightning-button label={season.Name} onclick={handleButtonGroup} data-id={season.Id} class="slds-p-horizontal_x-small">
+                                </lightning-button> 
+                            </li>
+                        </template>
+                    </lightning-button-group>
+               </template>
+               <template if:false={seasons}>
+                    <b>Sadly, no seasons has been added yet to this series. Our moderators will soon change it.</b>
+               </template>
+                <template if:true={selectedSeason}>
+                    <c-add-episode-form season-id={selectedSeason}></c-add-episode-form>
+                </template>
+            </ul>
+        </template> 
+        
+       
+    </div>
+</template>

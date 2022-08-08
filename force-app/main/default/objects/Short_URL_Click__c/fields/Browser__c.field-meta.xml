@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Browser__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( contains( lower( User_Agent__c ), &quot;opera&quot; ), &quot;opera&quot;,
+
+if( contains( lower( User_Agent__c ), &quot;msie&quot;	 ), &quot;Internet Explorer&quot;,
+if( contains( lower( User_Agent__c ), &quot;internet explorer&quot;	), &quot;Internet Explorer&quot;,
+if( contains( lower( User_Agent__c ), &quot;shiira&quot;	 ), &quot;Shiira&quot;,
+if( contains( lower( User_Agent__c ), &quot;chimera&quot;	 ), &quot;Chimera&quot;,
+if( contains( lower( User_Agent__c ), &quot;phoenix&quot;	 ), &quot;Phoenix&quot;,
+if( contains( lower( User_Agent__c ), &quot;firebird&quot;	 ), &quot;Firebird&quot;,
+if( contains( lower( User_Agent__c ), &quot;camino&quot;	 ), &quot;Camino&quot;,
+if( contains( lower( User_Agent__c ), &quot;netscape&quot;	 ), &quot;Netscape&quot;,
+if( contains( lower( User_Agent__c ), &quot;opera&quot;	 ), &quot;Opera&quot;,
+if( contains( lower( User_Agent__c ), &quot;chrome&quot;	 ), &quot;Chrome&quot;,
+if( contains( lower( User_Agent__c ), &quot;safari&quot;	 ), &quot;Safari&quot;,
+if( contains( lower( User_Agent__c ), &quot;firefox&quot;	 ), &quot;Firefox&quot;,
+if( contains( lower( User_Agent__c ), &quot;konqueror&quot;	 ), &quot;Konqueror&quot;,
+
+if( contains( lower( User_Agent__c ), &quot;mozilla&quot;	 ), &quot;Mozilla&quot;, &quot;Unknown Browser&quot;)))))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Browser</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

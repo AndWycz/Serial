@@ -1,0 +1,26 @@
+<template>
+    <div class ="slds-box slds-theme_default">
+        <ul>
+            <li>
+                <template if:true={resoultOfUpload}>
+                    <div>
+                        <p>{resoultOfUpload}</p>
+                    </div>
+                </template>
+            </li>
+            <li>
+                <div class = "slds-m-around_medium">
+                    <lightning-input type="text" name ="Name"  min-length=1 max-length=35 required label="Title" onchange={onNameChange}></lightning-input>
+                    <template if:true={name}>
+                        <lightning-input type="text" name ="Description" min-length=20 max-length=300 label="Description" onchange={onDescChange}></lightning-input>
+                    </template>
+                </div>  
+            </li>
+            <li>
+                <template if:true={name}>
+                    <lightning-button variant="brand" label="Upload Episode" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                </template>
+            </li>
+        </ul>
+    </div> 
+</template>

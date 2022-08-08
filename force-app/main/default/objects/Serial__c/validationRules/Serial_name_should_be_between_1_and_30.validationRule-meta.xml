@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Serial_name_should_be_between_1_and_30</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(LEN(Name) &gt; 30, LEN(Name) &lt;1)</errorConditionFormula>
+    <errorMessage>Serial name should be between 1 and 30 characters long</errorMessage>
+</ValidationRule>

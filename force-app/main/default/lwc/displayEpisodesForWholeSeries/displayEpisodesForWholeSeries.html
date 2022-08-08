@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="All episodes">
+        <div class="slds-scrollable_y" style="height:400px;">
+            <template if:true={seasons}>
+                <ul>
+                    <template for:each={seasons} for:item="season">
+                        <li key={season.Id}>
+                            <div class="slds-p-around_xx-small">
+                                <div class="slds-text-align_center">
+                                    <div class="slds-text-heading_medium">
+                                        {season.Name}
+                                    </div>
+                                </div>
+                            </div>
+                            <c-display-episodes-for-season season-id={season.Id}></c-display-episodes-for-season>
+                        </li>
+                    </template>
+                </ul>
+            </template> 
+        </div>
+    </lightning-card>      
+</template>

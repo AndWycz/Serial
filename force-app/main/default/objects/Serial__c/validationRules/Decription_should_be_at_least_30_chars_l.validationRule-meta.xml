@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Decription_should_be_at_least_30_chars_l</fullName>
+    <active>true</active>
+    <errorConditionFormula>LEN(Opis_serialu__c ) &lt; 30</errorConditionFormula>
+    <errorMessage>Description should have at least 30 characters</errorMessage>
+</ValidationRule>

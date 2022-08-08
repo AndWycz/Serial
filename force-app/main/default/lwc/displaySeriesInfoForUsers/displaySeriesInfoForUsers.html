@@ -1,0 +1,84 @@
+<template>
+    <div class="myClass">
+        <div class="slds-m-left_x-small">
+            <lightning-card title={name}>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                       
+                        <div class="slds-p-left_large">
+                            <ul>
+                                <div class="slds-align_absolute-center">
+                                    <div class="slds-text-heading_medium">
+                                        <i>Logo</i>
+                                    </div>
+                                </div>
+                                <li>
+                                    <template if:true={imageURL}>
+                                        <img 
+                                        src={imageURL} 
+                                        alt="Series logo"
+                                        height="400px"
+                                        width="300px"/>
+                                    </template>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="slds-p-left_large">
+                            <ul>
+                                <div class="slds-p-top_small">
+                                    <div class="slds-align_absolute-center">
+                                        <div class="slds-text-heading_medium">
+                                            <i>Trailer</i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <li>
+                                    <template if:true={trailerURL}>
+                                        <div class="container">
+                                            <iframe class="responsive-iframe"
+                                            src={trailerURL} >
+                                           </iframe>
+                                        </div>
+                                    </template>
+                                </li>
+                            </ul>
+                        </div>
+                       
+                    </div>
+                    <div class="slds-col">
+                        <ul>
+                            <li>
+                                <div class="slds-align_absolute-center">
+                                    <div class="slds-text-heading_medium">
+                                        <i>List of Actors</i>
+                                    </div>
+                                </div>
+                                <c-display-list-of-actors series-id={recordId}></c-display-list-of-actors>
+                            </li>
+                            <li>
+                                <div class="slds-p-top_small">
+                                    <div class="slds-align_absolute-center">
+                                        <div class="slds-text-heading_medium">
+                                            <i>Description</i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-p-around_small">
+                                    {desc}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </lightning-card>
+            <lightning-card title="Add an episode to this series">
+                <div>
+                    <c-add-episode-to-series-for-users series-id ={recordId}>
+                    </c-add-episode-to-series-for-users>
+                </div>
+            </lightning-card>
+        </div>
+    </div>
+   
+</template>
