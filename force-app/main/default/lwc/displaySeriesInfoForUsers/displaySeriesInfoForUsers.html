@@ -1,5 +1,4 @@
 <template>
-    <div class="myClass">
         <div class="slds-m-left_x-small">
             <lightning-card title={name}>
                 <div class="slds-grid slds-gutters">
@@ -13,13 +12,15 @@
                                     </div>
                                 </div>
                                 <li>
-                                    <template if:true={imageURL}>
-                                        <img 
-                                        src={imageURL} 
-                                        alt="Series logo"
-                                        height="400px"
-                                        width="300px"/>
-                                    </template>
+                                    <div class="slds-align_absolute-center">
+                                        <template if:true={imageURL}>
+                                            <img 
+                                            src={imageURL} 
+                                            alt="Series logo"
+                                            height="400px"
+                                            width="300px"/>
+                                        </template>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -33,13 +34,15 @@
                                     </div>
                                 </div>
                                 <li>
-                                    <template if:true={trailerURL}>
-                                        <div class="container">
-                                            <iframe class="responsive-iframe"
-                                            src={trailerURL} >
-                                           </iframe>
-                                        </div>
-                                    </template>
+                                    <div class="slds-align_absolute-center">
+                                        <template if:true={trailerURL}>
+                                            <div class="container">
+                                                <iframe class="responsive-iframe"
+                                                src={trailerURL} >
+                                            </iframe>
+                                            </div>
+                                        </template>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -67,18 +70,29 @@
                                     {desc}
                                 </div>
                             </li>
+                            <li>
+                                <div class="slds-align_absolute-center">
+                                    <div class="slds-text-heading_medium">
+                                        <i>Rating</i>
+                                    </div>
+                                </div>
+                                <div class="slds-p-top_small">
+                                    <div class="slds-align_absolute-center">
+                                        <i>{rating}</i>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
                 
             </lightning-card>
             <lightning-card title="Add an episode to this series">
-                <div>
+                <div class="myClass">
                     <c-add-episode-to-series-for-users series-id ={recordId}>
                     </c-add-episode-to-series-for-users>
                 </div>
             </lightning-card>
+            <c-add-season-form series-id ={recordId}></c-add-season-form>
         </div>
-    </div>
-   
 </template>

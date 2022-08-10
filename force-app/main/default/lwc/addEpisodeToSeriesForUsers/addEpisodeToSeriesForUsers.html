@@ -5,7 +5,7 @@
                 <template if:true={seasons}>
                     <lightning-button-group class="slds-button-group-row">
                         <template for:each={seasons} for:item="season" for:index="index">
-                            <li key={season.Id}>
+                            <li key={season.Name}>
                                 <lightning-button label={season.Name} onclick={handleButtonGroup} data-id={season.Id} class="slds-p-horizontal_x-small">
                                 </lightning-button> 
                             </li>

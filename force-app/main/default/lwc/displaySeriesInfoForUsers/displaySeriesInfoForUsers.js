@@ -15,6 +15,8 @@ export default class DisplaySeriesInfoForUsers extends LightningElement {
     imageURL;
     @track
     trailerURL;
+    @track
+    rating;
     connectedCallback(){
         console.log(this.recordId);
         console.log('jestem w callbacku');
@@ -24,6 +26,7 @@ export default class DisplaySeriesInfoForUsers extends LightningElement {
             this.desc = result.Opis_serialu__c;
             this.imageURL = result.Url_for_logo__c;
             this.trailerURL = result.Url_to_trailer__c;
+            this.rating = result.Rating__c;
         })
        
     }

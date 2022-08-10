@@ -5,7 +5,7 @@ public with sharing class SerialeController {
     }
     @AuraEnabled
     public static Serial__c querySeriesWithId(Id recordId) {
-        return [SELECT Name, Opis_serialu__c, Url_for_logo__c, Url_to_trailer__c
+        return [SELECT Name, Opis_serialu__c, Url_for_logo__c, Url_to_trailer__c, Rating__c
         FROM Serial__c WHERE Id = :recordId LIMIT 1];
     }
     @AuraEnabled
@@ -14,7 +14,7 @@ public with sharing class SerialeController {
     }
     @AuraEnabled
     public static Id insertEpisode(Episode__c epi){
-        List <Episode__c> epiList = [SELECT Id, Name FROM Episode__c WHERE Name = :epi.Name];
+        List <Episode__c> epiList = [SELECT Id, Name FROM Episode__c WHERE Name = :epi.Name AND Season__c = :epi.Season__c];
         if(epiList.size()<1 && epi.Name.length() > 1){
             try{
                 insert epi;
@@ -24,6 +24,18 @@ public with sharing class SerialeController {
             
         }
         return epi.Id;
+    }
+    @AuraEnabled
+    public static Id insertSeason(Season__c sea){
+        List <Season__c> seaList = [SELECT Id, Name FROM Season__c WHERE Name = :sea.Name AND Serial__c =:sea.Serial__c];
+        if(seaList.size()<1 && sea.Name.length() > 1){
+            try{
+                insert sea;
+            }catch(Exception ex) {
+                System.debug(ex);
+            }
+        }
+        return sea.Id;
     }
     @AuraEnabled
     public static List<Actor__c> queryActorsFromSerial(Id serialId){
